@@ -50,3 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#My
+.DS_Store
+.idea/
+wolf3d
+cmake-build-debug/
+!minilibx_macos/libmlx.a
+!minilibx_linux/libmlx.a
+!minilibx_linux/libmlx_Linux.a

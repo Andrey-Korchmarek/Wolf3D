@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
-NAME = fractol
+NAME = wolf3d
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
 FWS = -lmlx -framework OpenGL -framework AppKit
@@ -27,7 +27,7 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_NAME))
 SRC_DIR = ./sources
 OBJ_DIR = ./object
 
-SRC_NAME = main.c burningship.c calculate.c complex.c draw.c ft_close.c game_over.c julia.c mandelbrot.c pix_to_coord.c
+SRC_NAME = main.c sources/*.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 all: $(NAME)

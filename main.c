@@ -1,4 +1,6 @@
-//
-// Created by Mari Ashley on 8/18/20.
-//
+#include "wolf3d.h"
 
+int	main(void)
+{
+	return (0);
+}
