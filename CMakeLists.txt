@@ -14,12 +14,12 @@ include_directories(sources)
 FILE(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.c ${CMAKE_CURRENT_SOURCE_DIR}/sources/*.c)
 FILE(GLOB INCLUDES includes/*.h)
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${INCLUDES})
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${INCLUDES})
 
 add_subdirectory(libft)
-target_link_libraries(${PROJECT_NAME} lib)
+target_link_libraries(${CMAKE_PROJECT_NAME} lib)
 
 add_library(mlx STATIC IMPORTED)
 set_property(TARGET mlx PROPERTY
         IMPORTED_LOCATION ${LIBMLX})
-target_link_libraries(${PROJECT_NAME} mlx ${OPENGL} ${APPKIT})
+target_link_libraries(${CMAKE_PROJECT_NAME} mlx ${OPENGL} ${APPKIT})

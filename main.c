@@ -80,10 +80,22 @@ int	main(void)
 	set_default(data);
 	if (!(img = (t_image*)malloc(sizeof(t_image))))
 		return (1);
-	img->img = mlx_new_image(data->mlx, 320, 320);
+
+	i = 320;
+	j = 320;
+	img->img = mlx_new_image(data->mlx, i, j);
 	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->llh, &img->endian);
 	img_pixel_full(img, data);
 	mlx_put_image_to_window(data->mlx, data->win, img->img, 0, 0);
+
+	free(img->img);
+	i = 320;
+	j = 200;
+	img->img = mlx_new_image(data->mlx, i, j);
+	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->llh, &img->endian);
+	img_pixel_full(img, data);
+	mlx_put_image_to_window(data->mlx, data->win, img->img, 320, 0);
+
 	player = (t_coord){159, 159, rangle(TAU)};
 	i = 0;
 	j = 0;
