@@ -73,7 +73,6 @@ int	main(void)
 	t_glob	*data;
 	t_image	*img;
 
-
 	(void)map;
 	if (!(data = (t_glob*)ft_memalloc(sizeof(t_glob))))
 		return (1);

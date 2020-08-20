@@ -8,10 +8,11 @@ set(LIBMLX ${CMAKE_SOURCE_DIR}/minilibx_linux/libmlx.a)
 
 include_directories(.)
 include_directories(libft)
+include_directories(includes)
 include_directories(minilibx_linux)
-FILE(GLOB SOURCES main.c srcs/*.c)
+FILE(GLOB SOURCES main.c sources/*.c)
 
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} includes/*.h)
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 
 add_subdirectory(libft)
 target_link_libraries(${CMAKE_PROJECT_NAME} libft)
