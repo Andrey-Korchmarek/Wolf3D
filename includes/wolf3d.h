@@ -19,6 +19,18 @@
 # define FON 0x0000ff
 # define TAU (2 * M_PI)
 
+# define BLACK 0x000000
+# define WHITE 0xffffff
+# define RED 0xff0000
+# define GREEN 0x00ff00
+# define BLUE 0x42c5f5
+# define WALL_CLR  0x747a78
+# define FLOOR  0x5ab514
+
+typedef int		t_bool;
+# define TRUE	1
+# define FALSE	0
+
 typedef	struct	s_name
 {
 	int				i;
@@ -51,6 +63,12 @@ typedef	struct	s_coord
 	int		y;
 	double	angle;
 }				t_coord;
+
+typedef	struct	s_pnt
+{
+	float	x;
+	float	y;
+}				t_pnt;
 
 typedef	struct	s_glob
 {

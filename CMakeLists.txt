@@ -12,9 +12,8 @@ include_directories(minilibx_macos)
 include_directories(includes)
 include_directories(sources)
 FILE(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.c ${CMAKE_CURRENT_SOURCE_DIR}/sources/*.c)
-FILE(GLOB INCLUDES includes/*.h)
 
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES} ${INCLUDES})
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 
 add_subdirectory(libft)
 target_link_libraries(${CMAKE_PROJECT_NAME} lib)

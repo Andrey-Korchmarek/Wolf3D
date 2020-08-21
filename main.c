@@ -78,7 +78,7 @@ int	main(void)
 	if (!(data = (t_glob*)ft_memalloc(sizeof(t_glob))))
 		return (1);
 	set_default(data);
-	if (!(img = (t_image*)malloc(sizeof(t_image))))
+	if (!(img = (t_image*)ft_memalloc(sizeof(t_image))))
 		return (1);
 
 	i = 320;
@@ -89,6 +89,9 @@ int	main(void)
 	mlx_put_image_to_window(data->mlx, data->win, img->img, 0, 0);
 
 	free(img->img);
+	img->img = NULL;
+	free(img->addr);
+	img->addr = NULL;
 	i = 320;
 	j = 200;
 	img->img = mlx_new_image(data->mlx, i, j);
