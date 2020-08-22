@@ -18,6 +18,22 @@
 # define ESC 53
 # define FON 0x0000ff
 # define TAU (2 * M_PI)
+# define PI_2 M_PI / 2
+# define PI3_2 3 * M_PI / 2
+# define EPS 0.0001 // epsilon
+# define FOV 70
+
+# define BLACK 0x000000
+# define WHITE 0xffffff
+# define RED 0xff0000
+# define GREEN 0x00ff00
+# define BLUE 0x42c5f5
+# define WALL_CLR  0x747a78
+# define FLOOR  0x5ab514
+
+typedef int		t_bool;
+# define TRUE	1
+# define FALSE	0
 
 typedef	struct	s_name
 {
@@ -52,10 +68,37 @@ typedef	struct	s_coord
 	double	angle;
 }				t_coord;
 
+typedef	struct	s_pnt
+{
+	float	x;
+	float	y;
+}				t_pnt;
+
+typedef	struct	s_raycasting
+{
+	float	dis;
+	int		cardinal_point; // 1-hor; 0-ver
+	t_pnt	cast_pnt;
+}				t_rcasting;
+
+typedef	struct	s_map
+{
+	int		w;
+	int		h;
+	int		**box;
+}				t_map;
+
+enum		cardinal_points
+		{
+	North, South, East, West
+};
+
 typedef	struct	s_glob
 {
 	int				width;
 	int				height;
+	int				map_w;
+	int				map_h;
 	int				game_w;
 	int				game_h;
 	char			c;
